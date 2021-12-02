@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
+import './fonts/absolute-empire.ttf'
+import Clock from './components/Clock';
+import LiveGame from './components/LiveGame'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <LiveGame />,
   document.getElementById('root')
 );
 

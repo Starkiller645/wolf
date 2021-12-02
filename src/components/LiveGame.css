@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;  
+}
+
+html {
+  background-color: #3a3a3a;
+}
+
+
+@media only screen and (max-width: 950px) {
+  .col {width: 80%;}
+  
+  .row-05 {height: 120px;}
+  .row-10 {height: 240px;}
+  .row-15 {height: 360px;}
+  .row-20 {height: 480px;}
+  .row-25 {height: 600px;}
+  .row-30 {height: 720px;}
+  .row-35 {height: 840px;}
+  .row-40 {height: 960px;}
+
+}
+
+@media only screen and (min-width: 950px) {
+  .col {width: 50%;}
+
+  .row-05 {height: 12.5%;}
+  .row-10 {height: 25%;}
+  .row-15 {height: 37.5%;}
+  .row-20 {height: 50%;}
+  .row-25 {height: 62.5%;}
+  .row-30 {height: 75%;}
+  .row-35 {height: 87.5%;}
+  .row-40 {height: 100%;}
+
+}
+
+
+@media only screen and (min-width: 1300px) {
+  .col {width: 33.33%;} 
+
+  .row-05 {height: 12.5%;}
+  .row-10 {height: 25%;}
+  .row-15 {height: 37.5%;}
+  .row-20 {height: 50%;}
+  .row-25 {height: 62.5%;}
+  .row-30 {height: 75%;}
+  .row-35 {height: 87.5%;}
+  .row-40 {height: 100%;}
+
+}
+
+
+.slide-in-ul {
+  padding-top: 2px;
+  padding-left: 12px;
+}
+
+.border-frame {
+  border: 2px solid darkgoldenrod;
+  display: inline-block;
+  position: relative;
+  z-index: 5;
+}
+
+.border-frame::before {
+  width: calc(100% + 50px + 4px - 120px);
+  height: calc(100% + 4px);
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.border-frame::after {
+  width: calc(100% + 50px + 4px - 120px);
+  height: calc(100% + 4px);
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+
+html, body {
+  height: 100%;
+}
+
+.time-disp {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.livegame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(110deg, #333333 50%, #1f1f1f calc(50% + 1px));
+  border-radius: 15px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  margin: 5px;
+}
+
+.enemy-champ-img {
+  width: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline;
+  transform: translateX(calc(30% * -1 * var(--num)));
+  clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+}
+
+.ally-champ-img {
+  width: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline;
+  transform: translateX(calc(30% * (var(--total) - var(--num))));
+  clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+}
+
+
+.score {
+  display: inline-block;
+  padding-top: 0;
+  margin: auto;
+  margin-top: 0;
+  font-size: 75px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+}
+
+.enemy { 
+  padding-right: 25%;
+  color: #ff4500;
+}
+
+.ally {
+  padding-left: 25%;
+  color: #00a6a5;
+}
+
+#game-time {
+  font-family: 'Outfit', 'Empire', sans-serif;
+  color: #fafafa;
+  font-weight: bold;
+  font-size: 20px;
+  align-self: end;
+  padding-top: 0px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 0px;
+}
+
+#game-type {
+  margin-top: 0px;
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-bottom: 0px;
+  font-size: 20px;
+  color: #fafafa;
+  font-family: 'Outfit','Empire', sans-serif;
+}
+
+.enemy-champs .ally-champs {
+  display: flex;
+  justify-content: space-around;
+}
+
+#champs-list {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#score-cont {
+  width: 100%;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
