@@ -1,0 +1,46 @@
+#wolf {
+  font-family: 'Wolf', sans-serif;
+  color: #f0f0f0;
+  font-size: 8vw;
+  position: relative;
+  left: 4vw;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+#wolf:after {
+  position: absolute;
+  content: '';
+  height: 3.5px;
+  bottom: 6px;
+  margin: 0 auto;
+  left: -11vw;
+  right: 0;
+  width: 92%;
+  background: #ff4500;
+}
+#wolf-description {
+  font-family: 'Outfit', sans-serif;
+  color: #f0f0f0;
+  font-size: 20px;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+#wolf-version {
+  color: #ff4500;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1300px) {
+  #wolf {
+    font-size: 6vw;
+  }
+
+  #wolf:after {
+    left: -5vw;
+    width: 105%;
+  }
+}
+
+
