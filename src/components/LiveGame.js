@@ -6,7 +6,7 @@ const request = require('request')
 class LiveGame extends React.Component {
   constructor(props) {
     super(props)
-    /*this.state = {
+    this.state = {
       ally: {
         kills: 0,
         champs: []
@@ -19,25 +19,26 @@ class LiveGame extends React.Component {
       time: "",
       starttime: 0,
       ingame: false,
-    }*/
-    this.state = {
+    }
+    /*this.state = {
       ally: {
         kills: 24,
-        champs: ["Shen", "Kindred", "Sylas", "Jinx", "Rell"]
+        champs: ["Aatrox", "Kindred", "Yone", "Jinx", "Bard"]
       },
       enemy: {
         kills: 16,
-        champs: ["Aatrox", "KhaZix", "Yone", "Caitlyn", "Nautilus"]
+        champs: ["Kayle", "Kayn", "Galio", "Caitlyn", "Nautilus"]
       },
       gametype: "RANKED SOLO/DUO 5v5",
       time: "",
-      starttime: 1638470539,
+      starttime: 1638549114,
       ingame: true,
-    }
+    }*/
 
   }
 
   EnemyChampsList = () => {
+    if(!this.state.ingame) return null
     var i = 0;
     const enemy_images = this.state.enemy.champs.map(champ => {
       i++;
@@ -51,6 +52,9 @@ class LiveGame extends React.Component {
   }
 
   AllyChampsList = () => {
+    if(!this.state.ingame) {
+        return null
+    }
     var i = 0;
     const ally_images = this.state.ally.champs.map(champ => {
       i++;
@@ -68,6 +72,7 @@ class LiveGame extends React.Component {
   }
 
   updateTime() {
+    if(!this.state.ingame) return null
     const timestamp = Math.round((Date.now() / 1000) - this.state.starttime)
     var secs = String(timestamp % 60)
     var mins = String(Math.floor(timestamp / 60))
@@ -90,7 +95,15 @@ class LiveGame extends React.Component {
           enemy: jsondata.enemy,
           gametype: jsondata.gametype,
           starttime: jsondata.starttime,
+          ingame: true
         })
+      } else {
+        this.setState({
+            ally: {kills: "-"},
+            enemy: {kills: "-"},
+            gametype: "NO ACTIVE GAME",
+            time: "--:--",
+            ingame: false})
       }
     })
   }
@@ -107,14 +120,7 @@ class LiveGame extends React.Component {
 
   render() {
     console.log(typeof this.state.ally.champs != typeof undefined)
-    if(!this.state.ingame) {
-      console.log(JSON.stringify(this.state.ally.champs))
-      return (
-        <div className="livegame">
-          <h1 id="no-game">Waiting for live game...</h1>
-        </div>
-      )
-    } else {
+   
       return (
         <div className="livegame row-15 col">
           <p id="game-type">{this.state.gametype}</p>
@@ -131,7 +137,7 @@ class LiveGame extends React.Component {
           </div>
         </div>
       )
-    }
+    
   }
 
 }

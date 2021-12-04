@@ -3,21 +3,33 @@
 }
 
 html {
-  background-color: #3a3a3a;
+  background-color: #353535;
 }
 
 
 @media only screen and (max-width: 950px) {
-  .col {width: 80%;}
+  .col {width: 98%;}
   
-  .row-05 {height: 120px;}
-  .row-10 {height: 240px;}
-  .row-15 {height: 360px;}
-  .row-20 {height: 480px;}
-  .row-25 {height: 600px;}
-  .row-30 {height: 720px;}
-  .row-35 {height: 840px;}
-  .row-40 {height: 960px;}
+  .row-05 {height: 15vh;}
+  .row-10 {height: 30vh;}
+  .row-15 {height: 45vh;}
+  .row-20 {height: 60vh;}
+  .row-25 {height: 75vh;}
+  .row-30 {height: 90vh;}
+  .row-35 {height: 105vh;}
+  .row-40 {height: 120vh;}
+
+    #game-time {
+        font-size: 4vw;
+    }
+
+    #game-type {
+        font-size: 4vw;
+    }
+
+    .score {
+        font-size: 15vw;
+    }
 
 }
 
@@ -33,6 +45,17 @@ html {
   .row-35 {height: 87.5%;}
   .row-40 {height: 100%;}
 
+  #game-time {
+    font-size: 2vh;
+  }
+  #game-type {
+    font-size: 2vh;
+  }
+
+  .score {
+    font-size: 8vh;
+  }
+
 }
 
 
@@ -47,6 +70,16 @@ html {
   .row-30 {height: 75%;}
   .row-35 {height: 87.5%;}
   .row-40 {height: 100%;}
+    #game-time {
+        font-size: 2vh;
+    }
+    #game-type {
+        font-size: 2vh;
+    }
+
+    .score {
+        font-size: 8vh;
+    }
 
 }
 
@@ -90,7 +123,7 @@ html, body {
 .time-disp {
   display: flex;
   width: 100%;
-  justify-content: end;
+  justify-content: flex-end;
   border-radius: 0px 0px 15px 15px;
 }
 
@@ -98,7 +131,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: linear-gradient(110deg, #333333 50%, #1f1f1f calc(50% + 1px));
+  background-image: linear-gradient(110deg, #2a2a2a 50%, #1f1f1f calc(50% + 1px));
   border-radius: 15px;
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
@@ -130,7 +163,6 @@ html, body {
   padding-top: 0;
   margin: auto;
   margin-top: 0;
-  font-size: 75px;
   font-family: 'Outfit', sans-serif;
   font-weight: bold;
 }
@@ -147,9 +179,8 @@ html, body {
 
 #game-time {
   font-family: 'Outfit', 'Empire', sans-serif;
-  color: #fafafa;
+  color: #ff4500;
   font-weight: bold;
-  font-size: 20px;
   align-self: end;
   padding-top: 0px;
   padding-right: 12px;
@@ -162,8 +193,7 @@ html, body {
   padding-top: 12px;
   padding-left: 12px;
   padding-bottom: 0px;
-  font-size: 20px;
-  color: #fafafa;
+  color: #f0f0f0;
   font-family: 'Outfit','Empire', sans-serif;
 }
 

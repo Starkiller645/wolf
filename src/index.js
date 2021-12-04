@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
 import './fonts/absolute-empire.ttf'
-import Clock from './components/Clock';
 import LiveGame from './components/LiveGame'
 import reportWebVitals from './reportWebVitals';
 
+function MainPage() {
+    return(
+        <>
+        <LiveGame />
+        <div className="headerbar">
+            <p>WOLF</p>
+        </div>
+        </>
+    )
+}
+
 ReactDOM.render(
-  <LiveGame />,
+  <MainPage />,
   document.getElementById('root')
 );
 

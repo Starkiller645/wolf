@@ -17,6 +17,30 @@
   url("./fonts/friz-quadrata-bold.otf") format("opentype");
 }
 
+@font-face {
+  font-family: 'Wolf';
+  src: local('Wolf'),
+  url("./fonts/vermin-vibes-slant.ttf") format("truetype");
+}
+
+
+.headerbar {
+  font-family: 'Wolf';
+  color: #f0f0f0;
+  background-color: #1c1c1c;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.headerbar:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: -3px;
+    background: green;
+}
 
 .slide-in-ul {
   display: inline-block;
