@@ -4,7 +4,6 @@ import './index.css';
 import './fonts/absolute-empire.ttf'
 import LiveGame from './components/LiveGame'
 import LiveLabel from './components/LiveLabel'
-import Recent from './components/Recent'
 import reportWebVitals from './reportWebVitals';
 
 function MainPage() {

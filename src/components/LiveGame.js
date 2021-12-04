@@ -6,7 +6,7 @@ const request = require('request')
 class LiveGame extends React.Component {
   constructor(props) {
     super(props)
-    /*this.state = {
+    this.state = {
       ally: {
         kills: "-",
         champs: []
@@ -19,9 +19,9 @@ class LiveGame extends React.Component {
       time: "--:--",
       starttime: 0,
       ingame: false,
-    }*/
+    }
     // Demo state for testing frontend
-    this.state = {
+    /*this.state = {
       ally: {
         kills: 24,
         champs: ["Aatrox", "Kindred", "Yone", "Jinx", "Bard"]
@@ -34,7 +34,7 @@ class LiveGame extends React.Component {
       time: "",
       starttime: 1638549114,
       ingame: true,
-    }
+    }*/
 
   }
 
@@ -46,6 +46,7 @@ class LiveGame extends React.Component {
       var temp = champ.replace(/ /g, '-')
       temp = temp.replace(/\./, '')
       temp = temp.replace(/\'/, '')
+      temp = temp.replace(/&/, 'amp')
       return <img alt={champ} key={temp} src={`https://mobafire.com/images/avatars/${temp.toLowerCase()}-classic.png`} className="enemy-champ-img" style={{"--num": i}}/>
     })
     return (
