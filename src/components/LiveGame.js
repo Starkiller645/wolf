@@ -6,34 +6,35 @@ const request = require('request')
 class LiveGame extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
+    /*this.state = {
       ally: {
-        kills: 0,
+        kills: "-",
         champs: []
       },
       enemy: {
-        kills: 0,
+        kills: "-",
         champs: []
       },
-      gametype: "",
-      time: "",
+      gametype: "NO ACTIVE GAME",
+      time: "--:--",
       starttime: 0,
       ingame: false,
-    }
-    /*this.state = {
+    }*/
+    // Demo state for testing frontend
+    this.state = {
       ally: {
         kills: 24,
         champs: ["Aatrox", "Kindred", "Yone", "Jinx", "Bard"]
       },
       enemy: {
         kills: 16,
-        champs: ["Kayle", "Kayn", "Galio", "Caitlyn", "Nautilus"]
+        champs: ["Dr. Mundo", "Kha'Zix", "Tahm Kench", "Caitlyn", "Nautilus"]
       },
       gametype: "RANKED SOLO/DUO 5v5",
       time: "",
       starttime: 1638549114,
       ingame: true,
-    }*/
+    }
 
   }
 
@@ -42,7 +43,10 @@ class LiveGame extends React.Component {
     var i = 0;
     const enemy_images = this.state.enemy.champs.map(champ => {
       i++;
-      return <img alt={champ} key={champ} src={`https://mobafire.com/images/avatars/${champ.toLowerCase()}-classic.png`} className="enemy-champ-img" style={{"--num": i}}/>
+      var temp = champ.replace(/ /g, '-')
+      temp = temp.replace(/\./, '')
+      temp = temp.replace(/\'/, '')
+      return <img alt={champ} key={temp} src={`https://mobafire.com/images/avatars/${temp.toLowerCase()}-classic.png`} className="enemy-champ-img" style={{"--num": i}}/>
     })
     return (
       <div className="enemy-champs">
@@ -103,7 +107,8 @@ class LiveGame extends React.Component {
             enemy: {kills: "-"},
             gametype: "NO ACTIVE GAME",
             time: "--:--",
-            ingame: false})
+            ingame: false
+        })
       }
     })
   }

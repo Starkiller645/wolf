@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './fonts/absolute-empire.ttf'
 import LiveGame from './components/LiveGame'
+import LiveLabel from './components/LiveLabel'
+import Recent from './components/Recent'
 import reportWebVitals from './reportWebVitals';
 
 function MainPage() {
     return(
         <>
+        <div className="column">
+        <div>
+        </div>
+        <div>
+        <LiveLabel />
         <LiveGame />
+        </div>
+        </div>
         <div className="headerbar">
             <p>WOLF</p>
         </div>
