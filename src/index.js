@@ -4,6 +4,7 @@ import './index.css';
 import './fonts/absolute-empire.ttf'
 import LiveGame from './components/LiveGame'
 import LiveLabel from './components/LiveLabel'
+import NextClash from './components/NextClash'
 import reportWebVitals from './reportWebVitals';
 
 function MainPage() {
@@ -15,6 +16,7 @@ function MainPage() {
         <div>
         <LiveLabel />
         <LiveGame />
+        <NextClash />
         </div>
         </div>
         <div className="headerbar">

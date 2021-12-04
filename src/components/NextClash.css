@@ -1,0 +1,60 @@
+.time-disp {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nextclash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(110deg, #2a2a2a 50%, #1f1f1f calc(50% + 1px));
+  border-radius: 15px;
+  font-family: "Outfit", sans-serif;
+  margin: 5px;
+}
+
+.clash-date {
+  font-family: "Wolf", sans-serif;
+  font-size: 5vw;
+  color: #f0f0f0;
+  display: inline;
+  width: 10vw;
+  justify-self: center;
+  position: relative;
+  top: 3vh;
+  left: 5vw;
+  text-align: right;
+}
+
+.clash-name {
+  font-weight: bold;
+  font-family: "Outfit", sans-serif;
+  color: #f0f0f0;
+  width: 25vw;
+  font-size: 50px;
+  padding: 0;
+  padding-right: 12px;
+  margin: 0;
+  text-align: right;
+  justify-self: flex-end;
+}
+ 
+#clash-time {
+  color: #00a6a5;
+  padding-right: 12px;
+  padding-top: 4px;
+  padding-bottom: 12px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.red {
+  color: #ff4500;
+}
