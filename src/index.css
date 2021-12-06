@@ -52,7 +52,7 @@
 
 .scrollbox {
   height: calc(100vh - 50px);
-  overflow-y: scroll;
+  overflow-y: visible;
 }
 
 .headerbar {

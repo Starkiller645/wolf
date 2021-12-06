@@ -5,7 +5,11 @@
     background-color: #2a2a2a;
     text-align: left;
     border-radius: 15px;
-    overflow: hidden;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-height: 50vh;
+    margin-top: 0;
 }
 
 .summoner {
@@ -13,6 +17,9 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: var(--col);
+    padding-left: 0px;
+    margin-left: 0px;
+    max-height: 20%;
 }
 
 .pos-icon {
@@ -23,6 +30,23 @@
     margin: auto;
     padding-left: 12px;
     padding-right: 12px;
+}
+
+.first {
+    border-radius: 15px 15px 0 0;
+}
+
+.last {
+    padding-bottom: 0px;
+    border-radius: 0 0 15px 15px;
+}
+
+.champ-img-first {
+    border-radius: 0 15px 0 0;
+}
+
+.champ-img-last {
+    border-radius: 0 0 15px 0;
 }
 
 .summoner-name {
@@ -38,10 +62,11 @@
     justify-self: flex-end;
     margin: auto;
     margin-right: 0px;
-    padding-right: 0;
-    display: inline;
-    height: 10vh;
+    padding-right: 0px;
     left: 8px;
-    /*clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);*/
+    max-height: 100%;
+    max-width: 100%;
+    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
     position: relative;
+    object-fit: contain;
 }

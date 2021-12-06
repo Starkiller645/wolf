@@ -49,16 +49,34 @@ class Team extends React.Component {
       var color;
       console.log(i % 2 == 0)
       if(i % 2 == 0) {
-        color = "#1f1f1f"
-      } else {
         color = "#2a2a2a"
+      } else {
+        color = "#1f1f1f"
       }
+      var class_name = "summoner"
+      if(i == 0) {
+        class_name += " first"
+      }
+      if(i == this.state.summoners.length - 1) {
+        class_name += " last"
+      }
+
+      var img_class = "champ-img"
+      if(i == 0) {
+        img_class += " champ-img-first"
+      }
+      if(i == this.state.summoners.length - 1) {
+        img_class += " champ-img-last"
+      }
+
+
+      console.log(class_name)
       i++
       return(
-        <div className="summoner" style={{"--col": color}}>
+        <div className={class_name} style={{"--col": color}}>
           {pos_img}
           <p className="summoner-name">{summoner.name}</p>
-          <img alt={summoner.mains[0]} key={summoner.mains[0]} src={`https://mobafire.com/images/avatars/${temp.toLowerCase()}-classic.png`} className="champ-img" />
+            <img alt={summoner.mains[0]} key={summoner.mains[0]} src={`https://mobafire.com/images/avatars/${temp.toLowerCase()}-classic.png`} className={img_class} />
         </div>
       )
     })
