@@ -45,6 +45,12 @@
   text-align: right;
   justify-self: flex-end;
 }
+
+@media only screen and (max-width: 950px) {
+  .clash-name {
+    font-size: 4vh;
+  }
+}
  
 #clash-time {
   color: #00a6a5;

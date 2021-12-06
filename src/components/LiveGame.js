@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './LiveGame.css'
-const request = require('request')
+import * as axios from 'axios'
 
 class LiveGame extends React.Component {
   constructor(props) {
@@ -90,9 +90,8 @@ class LiveGame extends React.Component {
   }
 
   updateData() {
-    request('https://lamb.jacobtye.dev/livegame', (err, res, body) => {
-      if(err) return console.log(err)
-      var jsondata = JSON.parse(body)
+    axios.get('https://lamb.jacobtye.dev/livegame').then((res) => {
+      var jsondata = res.data
       console.log(jsondata)
       if(typeof jsondata.ally != typeof undefined) {
         this.setState({

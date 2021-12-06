@@ -48,6 +48,7 @@ html, body {
   width: 100%;
   justify-content: flex-end;
   border-radius: 0px 0px 15px 15px;
+  vertical-align: bottom;
 }
 
 .livegame {

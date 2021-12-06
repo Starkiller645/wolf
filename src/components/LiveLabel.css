@@ -1,11 +1,13 @@
 #wolf {
-  font-family: 'Wolf', sans-serif;
-  color: #f0f0f0;
-  font-size: 8vw;
-  position: relative;
-  left: 4vw;
-  padding: 0;
-  margin-bottom: 0;
+  width: 100%;
+
+}
+
+@media only screen and (min-width: 950px) {
+  #wolf {
+    font-size: 6vh;
+    left: 2vw;
+  }
 }
 
 #wolf:after {
@@ -14,9 +16,9 @@
   height: 3.5px;
   bottom: 6px;
   margin: 0 auto;
-  left: -11vw;
+  left: -10vw;
   right: 0;
-  width: 92%;
+  width: 26vw;
   background: #ff4500;
 }
 #wolf-description {
