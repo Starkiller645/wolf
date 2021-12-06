@@ -56,14 +56,26 @@
 }
 
 .headerbar {
+  height: 50px;
   font-family: 'Wolf';
-  color: #f0f0f0;
-  background-color: #1c1c1c;
-  text-align: center;
+  color: #1f1f1f;
+  text-align: left;
+  padding-left: 20px;
+  background-color: #00ccd3;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 50px
+}
+
+.white {
+  color: #0f0f0f;
+}
+
+.scrollbox {
+    height: calc(100vh - 50px);
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .headerbar:after {

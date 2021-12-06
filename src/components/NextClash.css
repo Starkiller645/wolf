@@ -37,7 +37,7 @@
   font-weight: bold;
   font-family: "Outfit", sans-serif;
   color: #f0f0f0;
-  width: 25vw;
+  width: 240px;
   font-size: 50px;
   padding: 0;
   padding-right: 12px;
@@ -53,7 +53,7 @@
 }
  
 #clash-time {
-  color: #00a6a5;
+  color: #00ccd3;
   padding-right: 12px;
   padding-top: 4px;
   padding-bottom: 12px;
@@ -63,4 +63,17 @@
 
 .red {
   color: #ff4500;
+}
+
+@media only screen and (max-width: 950px) {
+  .clash-date {
+    font-size: 8vh;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .clash-date {
+    font-size: 4vw;
+    left: 3vw;
+  }
 }
