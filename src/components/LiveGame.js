@@ -6,7 +6,7 @@ const request = require('request')
 class LiveGame extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
+    /*this.state = {
       ally: {
         kills: "-",
         champs: []
@@ -19,9 +19,9 @@ class LiveGame extends React.Component {
       time: "--:--",
       starttime: 0,
       ingame: false,
-    }
+    }*/
     // Demo state for testing frontend
-    /*this.state = {
+    this.state = {
       ally: {
         kills: 24,
         champs: ["Aatrox", "Kindred", "Yone", "Jinx", "Bard"]
@@ -34,7 +34,7 @@ class LiveGame extends React.Component {
       time: "",
       starttime: 1638549114,
       ingame: true,
-    }*/
+    }
 
   }
 
@@ -44,11 +44,14 @@ class LiveGame extends React.Component {
     const enemy_images = this.state.enemy.champs.map(champ => {
       i++;
       var temp = champ.replace(/ /g, '-')
-      temp = temp.replace(/\./, '')
-      temp = temp.replace(/\'/, '')
-      temp = temp.replace(/&/, 'amp')
+      temp = temp.replace(/['\.]/gi, "")
+      temp = temp.replace(/\&/g, 'amp')
       return <img alt={champ} key={temp} src={`https://mobafire.com/images/avatars/${temp.toLowerCase()}-classic.png`} className="enemy-champ-img" style={{"--num": i}}/>
-    })
+        })
+      while(enemy_images.length < 5) {
+        i++
+        enemy_images.push(<img alt="Placeholder" src="/placeholder.png" style={{"--num": i}} className="enemy-champ-img"/>)
+      }
     return (
       <div className="enemy-champs">
         { enemy_images }
@@ -63,12 +66,24 @@ class LiveGame extends React.Component {
     var i = 0;
     const ally_images = this.state.ally.champs.map(champ => {
       i++;
+      var temp = champ.replace(/ /g, '-')
+      temp = temp.replace(/['\.]/gi, "")
+      temp = temp.replace(/\&/g, 'amp')
+
       var style = {
         "--num": i,
-        "--total": this.state.ally.champs.length,
+        "--total": 5,
       }
-      return <img alt={champ} key={champ} src={`https://mobafire.com/images/avatars/${champ.toLowerCase()}-classic.png`} className="ally-champ-img" style={style}a/>
+      return <img alt={champ} key={champ} src={`https://mobafire.com/images/avatars/${temp.toLowerCase()}-classic.png`} className="ally-champ-img" style={style}/>
     })
+    while(ally_images.length < 5) {
+        i++
+        var style = {
+          "--num": i,
+          "--total": 5,
+        }
+        ally_images.push(<img alt="Placeholder" src="/placeholder.png" style={style} className="ally-champ-img"/>)
+    }
     return(
       <div className="ally-champs">
         { ally_images }
@@ -93,7 +108,7 @@ class LiveGame extends React.Component {
     request('https://lamb.jacobtye.dev/livegame', (err, res, body) => {
       if(err) return console.log(err)
       var jsondata = JSON.parse(body)
-      console.log(jsondata)
+      console.log(JSON.stringify(jsondata))
       if(typeof jsondata.ally != typeof undefined) {
         this.setState({
           ally: jsondata.ally,
@@ -115,6 +130,7 @@ class LiveGame extends React.Component {
   }
 
   componentDidMount() { 
+    this.updateTime()
     this.updateTimeID = setInterval(() => {this.updateTime()}, 1000)
     this.updateDataID = setInterval(() => {this.updateData()}, 1000)
   }

@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 function MainPage() {
     return(
         <>
-        <div className="column">
+        <div className="column scrollbox">
         <div>
         </div>
         <div>
@@ -20,7 +20,7 @@ function MainPage() {
         </div>
         </div>
         <div className="headerbar">
-            <p>WOLF</p>
+            <p>WOLF BETA</p>
         </div>
         </>
     )

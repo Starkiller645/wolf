@@ -8,7 +8,7 @@ class NextClash extends React.Component {
     super(props)
     this.props = props
     this.state = {
-      name: "Zaun Clash",
+      name: "",
       day: "--",
       month: "--",
       time: "--:--"
