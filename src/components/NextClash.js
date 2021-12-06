@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './NextClash.css'
-const request = require('request')
+import *  as axios from 'axios'
 
 class NextClash extends React.Component {
   constructor(props) {
     super(props)
     this.props = props
     this.state = {
-      name: "Zaun Clash",
+      name: "",
       day: "--",
       month: "--",
       time: "--:--"
@@ -16,14 +16,14 @@ class NextClash extends React.Component {
   }
 
   updateData() {
-    request('https://lamb.jacobtye.dev/nextclash', (err, res, body) => {
-      if(err) return console.log(err)
-      var jsondata = JSON.parse(body)
+    axios.get('https://lamb.jacobtye.dev/nextclash').then((res) => {  
+      var jsondata = {}
+      console.log(res)
       if(typeof jsondata.name == typeof undefined) {
         this.setState({
-          name: "NO UPCOMING CLASH",
-          day: "--",
-          month: "--",
+          name: "NO CLASH",
+          day: "",
+          month: "",
           time: "--:--",
         })
       } else {
@@ -52,7 +52,7 @@ class NextClash extends React.Component {
 
   render() {
     return (
-      <div className="col row-1 nextclash">
+      <div className="col row-10 nextclash">
         <div className="flex-container" id="nextclash-cont">
           <div style={{display: "inline"}}><p className="clash-date">{this.state.day}</p><br/><p className="clash-date red">{this.state.month}</p></div>
           <h3 className="clash-name">{this.state.name}</h3>

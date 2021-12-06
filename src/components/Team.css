@@ -1,0 +1,47 @@
+.team {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #2a2a2a;
+    text-align: left;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.summoner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--col);
+}
+
+.pos-icon {
+    display: inline;
+    justify-self: flex-start;
+    width: auto;
+    height: 4vh;
+    margin: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.summoner-name {
+    color: #f0f0f0;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    font-size: 3vh;
+    justify-self: flex-start;
+    flex-grow: 2;
+}
+
+.champ-img {
+    justify-self: flex-end;
+    margin: auto;
+    margin-right: 0px;
+    padding-right: 0;
+    display: inline;
+    height: 10vh;
+    left: 8px;
+    /*clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);*/
+    position: relative;
+}

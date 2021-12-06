@@ -24,17 +24,58 @@
 }
 
 .column {
-  columns: 3 30%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100% - 50px)
+}
+
+@media only screen and (max-width: 950px) {
+  .column {
+    flex-direction: column;
+  }
+
+  .col-1 {
+    flex: 100%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .col-1 {
+    flex: 50%;
+  }
+}
+
+.col-1 {
+  flex: 33%;
+}
+
+.scrollbox {
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
 }
 
 .headerbar {
+  height: 50px;
   font-family: 'Wolf';
-  color: #f0f0f0;
-  background-color: #1c1c1c;
-  text-align: center;
+  color: #1f1f1f;
+  text-align: left;
+  padding-left: 20px;
+  background-color: #00ccd3;
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 50px
+}
+
+.white {
+  color: #0f0f0f;
+}
+
+.scrollbox {
+    height: calc(100vh - 50px);
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .headerbar:after {
@@ -91,8 +132,6 @@ code {
 }
 
 @media only screen and (max-width: 950px) {
-  .col {width: 98%;}
-  
   .row-05 {height: 15vh;}
   .row-10 {height: 30vh;}
   .row-15 {height: 45vh;}
@@ -117,16 +156,14 @@ code {
 }
 
 @media only screen and (min-width: 950px) {
-  .col {width: 50%;}
-
-  .row-05 {height: 12.5%;}
-  .row-10 {height: 25%;}
-  .row-15 {height: 37.5%;}
-  .row-20 {height: 50%;}
-  .row-25 {height: 62.5%;}
-  .row-30 {height: 75%;}
-  .row-35 {height: 87.5%;}
-  .row-40 {height: 100%;}
+  .row-05 {height: 12.5vh;}
+  .row-10 {height: 25vh;}
+  .row-15 {height: 37.5vh;}
+  .row-20 {height: 50vh;}
+  .row-25 {height: 62.5vh;}
+  .row-30 {height: 75vh;}
+  .row-35 {height: 87.5vh;}
+  .row-40 {height: 100vh;}
 
   #game-time {
     font-size: 2vh;
@@ -143,16 +180,15 @@ code {
 
 
 @media only screen and (min-width: 1300px) {
-  .col {width: 33.33%;} 
+  .row-05 {height: 12.5vh;}
+  .row-10 {height: 25vh;}
+  .row-15 {height: 37.5vh;}
+  .row-20 {height: 50vh;}
+  .row-25 {height: 62.5vh;}
+  .row-30 {height: 75vh;}
+  .row-35 {height: 87.5vh;}
+  .row-40 {height: 100vh;}
 
-  .row-05 {height: 12.5%;}
-  .row-10 {height: 25%;}
-  .row-15 {height: 37.5%;}
-  .row-20 {height: 50%;}
-  .row-25 {height: 62.5%;}
-  .row-30 {height: 75%;}
-  .row-35 {height: 87.5%;}
-  .row-40 {height: 100%;}
     #game-time {
         font-size: 2vh;
     }

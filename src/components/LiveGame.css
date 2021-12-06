@@ -48,6 +48,7 @@ html, body {
   width: 100%;
   justify-content: flex-end;
   border-radius: 0px 0px 15px 15px;
+  vertical-align: bottom;
 }
 
 .livegame {
@@ -97,7 +98,7 @@ html, body {
 
 .ally {
   padding-left: 25%;
-  color: #00a6a5;
+  color: #00ccd3;
 }
 
 #game-time {
