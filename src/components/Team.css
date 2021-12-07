@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 .team {
     display: flex;
     flex-direction: column;
@@ -71,4 +73,11 @@
     max-width: 10vh;
     clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
     position: relative;
+}
+
+
+.result {
+    width: 40px;
+    flex: 10%;
+    background: yellow;
 }

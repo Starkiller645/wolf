@@ -22,7 +22,6 @@ class Team extends React.Component {
   PlayersList = () => {
     var i = 0;
     const players = this.state.summoners.map(summoner => {
-      console.log(summoner.name)
       var temp = summoner.mains[0]
       temp = temp.replace(/ /g, '-')
       temp = temp.replace(/\./, '')
@@ -47,7 +46,6 @@ class Team extends React.Component {
           break
       }
       var color;
-      console.log(i % 2 == 0)
       if(i % 2 == 0) {
         color = "#2a2a2a"
       } else {
@@ -70,7 +68,6 @@ class Team extends React.Component {
       }
 
 
-      console.log(class_name)
       i++
       return(
         <div className={class_name} style={{"--col": color}}>
@@ -88,10 +85,8 @@ class Team extends React.Component {
   }
 
   updatePlayers() {
-    console.log("Updating players")
     axios.get('https://lamb.jacobtye.dev/team').then((res) => {
       var jsondata = res.data
-      console.log(res)
       this.setState({
         summoners: jsondata
       })

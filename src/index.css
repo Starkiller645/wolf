@@ -30,6 +30,10 @@
   height: calc(100% - 50px)
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @media only screen and (max-width: 950px) {
   .column {
     flex-direction: column;
