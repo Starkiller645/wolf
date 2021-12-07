@@ -13,7 +13,7 @@ class LiveLabel extends React.Component {
   
   render() {
     return (
-      <div className="col row-10">
+      <div className="col row-10 wolf-logo">
         <img id="wolf" src={Logo}/>
       </div>
     )

@@ -55,6 +55,10 @@
   overflow-y: visible;
 }
 
+.component {
+  margin: 0;
+}
+
 .headerbar {
   height: 50px;
   font-family: 'Wolf';

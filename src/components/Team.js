@@ -108,7 +108,7 @@ class Team extends React.Component {
 
   render() {
     return(
-      <div className="col row-20 team">
+      <div className="col row-20 team component">
         <this.PlayersList />
       </div>
     )

@@ -10,6 +10,11 @@
   }
 }
 
+.wolf-logo {
+  margin: 6px;
+  margin-bottom: 11px;
+}
+
 #wolf:after {
   position: absolute;
   content: '';

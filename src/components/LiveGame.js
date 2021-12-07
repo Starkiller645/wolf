@@ -6,7 +6,7 @@ import * as axios from 'axios'
 class LiveGame extends React.Component {
   constructor(props) {
     super(props)
-    /*this.state = {
+    this.state = {
       ally: {
         kills: "-",
         champs: []
@@ -19,9 +19,9 @@ class LiveGame extends React.Component {
       time: "--:--",
       starttime: 0,
       ingame: false,
-    }*/
+    }
     // Demo state for testing frontend
-    this.state = {
+    /*this.state = {
       ally: {
         kills: 24,
         champs: ["Aatrox", "Kindred", "Yone", "Jinx", "Bard"]
@@ -34,7 +34,7 @@ class LiveGame extends React.Component {
       time: "",
       starttime: 1638549114,
       ingame: true,
-    }
+    }*/
 
   }
 
@@ -130,6 +130,7 @@ class LiveGame extends React.Component {
 
   componentDidMount() { 
     this.updateTime()
+    this.updateData()
     this.updateTimeID = setInterval(() => {this.updateTime()}, 1000)
     this.updateDataID = setInterval(() => {this.updateData()}, 1000)
   }
