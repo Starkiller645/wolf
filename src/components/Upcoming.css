@@ -1,0 +1,42 @@
+.upcoming {
+  border-radius: 15px;
+  background: #353535;
+  padding: 0;
+  margin: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Outfit', sans-serif;
+}
+
+.event {
+  background-color: var(--col);
+  border-radius: 15px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-title {
+  font-size: 20px;
+}
+
+.event-date {
+  padding-left: 15px;
+  padding-top: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  justify-self: flex-end;
+  text-align: bottom;
+  font-family: 'Wolf', sans-serif;
+  font-size: 4vh;
+}
+
+.month {
+  color: #fafafa;
+}
+
+.day {
+  color: var(--textcol);
+}

@@ -7,6 +7,7 @@ import LiveLabel from './components/LiveLabel'
 import NextClash from './components/NextClash'
 import Team from './components/Team'
 import Recent from './components/Recent'
+import Upcoming from './components/Upcoming'
 import reportWebVitals from './reportWebVitals';
 
 class MainPage extends React.Component {
@@ -35,6 +36,7 @@ class MainPage extends React.Component {
                     <LiveGame />
                     <NextClash />
                     <Recent />
+                    <Upcoming />
                     <Team />
                 </div>
                 <div className="headerbar">
@@ -54,6 +56,7 @@ class MainPage extends React.Component {
                 <div className="col-1">
                     <NextClash />
                     <Team />
+                    <Upcoming />
                 </div>
                 </div>
                 <div className="headerbar">
@@ -75,6 +78,7 @@ class MainPage extends React.Component {
                 </div>
                 <div className="col-1">
                     <Team />
+                    <Upcoming />
                 </div>
                 </div>
                 </>
