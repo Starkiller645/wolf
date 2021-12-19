@@ -76,8 +76,8 @@ class Recent extends React.Component {
       }
 
       var date = new Date(game.timestamp)
-      var day = date.getDay()
-      var month = date.getMonth()
+      var day = date.getDate()
+      var month = date.getMonth() + 1
       var display_date = String(day) + "/" + String(month)
 
 
@@ -94,7 +94,7 @@ class Recent extends React.Component {
             </div>
           </div>
           <div className={res_class} style={res_style}>
-            <p className="date">{"--:--"}</p>
+            <p className="date">{game["gameLength"]}</p>
             <p className="res-letter">{text}</p>
             <p className="date">{display_date}</p>
           </div>

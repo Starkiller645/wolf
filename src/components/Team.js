@@ -86,7 +86,7 @@ class Team extends React.Component {
 
   updatePlayers() {
     axios.get('https://lamb.jacobtye.dev/team').then((res) => {
-      var jsondata = res.data
+      var jsondata = res.data.splice(0, 5)
       this.setState({
         summoners: jsondata
       })
