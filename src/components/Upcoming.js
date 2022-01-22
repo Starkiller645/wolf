@@ -26,7 +26,17 @@ class Upcoming extends React.Component {
     })
   }
 
+  componentDidMount() {
+    this.updateData()
+    this.updateDataID = setInterval(30000, () => {this.updateData()})
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateDataID)
+  }
+
   RenderEvents = () => {
+    var i = 0
     var ev = this.state.events.map((eventdata) => {
       var color = "#2a2a2a"
       var textCol = "#0f0f0f"
@@ -48,11 +58,21 @@ class Upcoming extends React.Component {
         "--col": color,
         "--textcol": textCol
       }
+      var classes = "event"
+      if(i == 0) {
+        classes += " event-first"
+      }
+      if(i == this.state.events.length - 1) {
+        classes += " event-last"
+      }
+      i++
       return(
-        <div className="event" style={styleColor}>
-          <p className="event-title">{eventdata.name}</p>
-          <p className="event-date day">{day}</p>
-          <p className="event-date month">{month}</p>
+        <div className={classes} style={styleColor}>
+          <div className="event-container">
+            <p className="event-title">{eventdata.name}</p>
+            <p className="event-date day">{day}</p>
+            <p className="event-date month">{month}</p>
+          </div>
         </div>
       )
     })
@@ -65,7 +85,7 @@ class Upcoming extends React.Component {
 
   render() {
     return (
-      <div className="upcoming column row-10">
+      <div className="upcoming col-1 row-10">
         <this.RenderEvents />
       </div>
     )
