@@ -20,9 +20,15 @@ class Upcoming extends React.Component {
   updateData() {
     axios.get("https://lamb.jacobtye.dev/upcoming").then(res => {
       var jsondata = res.data
-      this.setState({
-        events: jsondata
-      })
+      if(jsondata.length > 4) {
+        this.setState({
+          events: jsondata.slice(0, 4)
+        })
+      } else {
+        this.setState({
+          events: jsondata
+        })
+      }
     })
   }
 
