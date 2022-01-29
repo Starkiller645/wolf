@@ -18,7 +18,7 @@ class NextClash extends React.Component {
   updateData() {
     axios.get('https://lamb.jacobtye.dev/nextclash').then((res) => {  
       var jsondata = {}
-      console.log(res)
+      jsondata = res.data
       if(typeof jsondata.name == typeof undefined) {
         this.setState({
           name: "NO CLASH",

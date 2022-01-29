@@ -40,6 +40,10 @@
   border-radius: 0 15px 15px 0;
 }
 
+.event-first-last {
+  border-radius: 15px;
+}
+
 .event-date {
   padding-left: 15px;
   padding-top: 0;

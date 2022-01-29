@@ -88,7 +88,10 @@ class MainPage extends React.Component {
 }
 
 ReactDOM.render(
-  <MainPage />,
+  <> 
+      <MainPage />
+      <div className="headerbar">WOLF<span style={{"color": "#fafafa"}}> beta</span></div>
+  </>,
   document.getElementById('root')
 );
 

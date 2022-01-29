@@ -67,9 +67,11 @@
 .headerbar {
   height: 50px;
   font-family: 'Wolf';
+  font-size: 24px;
   color: #1f1f1f;
-  text-align: left;
+  text-align: center;
   padding-left: 20px;
+  padding-top: 13px;
   background-color: #00ccd3;
   position: fixed;
   bottom: 0;

@@ -71,6 +71,9 @@ class Upcoming extends React.Component {
       if(i == this.state.events.length - 1) {
         classes += " event-last"
       }
+      if(i == 0 && i == this.state.events.length - 1) {
+        classes = "event event-first-last"
+      }
       i++
       return(
         <div className={classes} style={styleColor}>
