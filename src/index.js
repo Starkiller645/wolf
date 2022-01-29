@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 import './fonts/absolute-empire.ttf'
 import LiveGame from './components/LiveGame'
@@ -9,6 +10,8 @@ import Team from './components/Team'
 import Recent from './components/Recent'
 import Upcoming from './components/Upcoming'
 import reportWebVitals from './reportWebVitals';
+import flv from 'flv'
+import {ReactFlvPlayer} from 'react-flv-player'
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -39,9 +42,6 @@ class MainPage extends React.Component {
                     <Upcoming />
                     <Team />
                 </div>
-                <div className="headerbar">
-                    <p>WOLF</p>
-                </div>
                 </>
             )
         } else if(width < 1300) {
@@ -58,9 +58,6 @@ class MainPage extends React.Component {
                     <Team />
                     <Upcoming />
                 </div>
-                </div>
-                <div className="headerbar">
-                    <p>WOLF</p>
                 </div>
                 </>
             )
@@ -87,9 +84,33 @@ class MainPage extends React.Component {
     }
 }
 
+class Live extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return(
+      <>
+        <ReactFlvPlayer url="http://82.24.240.212:8000/live/league.flv" isLive={true} />
+      </>
+    )
+  }
+
+}
+
 ReactDOM.render(
   <> 
-      <MainPage />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<MainPage />}>
+          </Route>
+          <Route exact path="/live" element={<Live />}>
+          </Route>
+          <Route exact path="/clash" element={<div>Clash</div>}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
       <div className="headerbar">WOLF<span style={{"color": "#fafafa"}}> beta</span></div>
   </>,
   document.getElementById('root')
