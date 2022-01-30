@@ -89,10 +89,20 @@ class Live extends React.Component {
     super(props)
   }
 
+  handleResize = (e) => {
+        this.setState({
+            width: window.innerWidth
+        })
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.handleResize)
+    }
+
   render() {
     return(
       <>
-        <ReactFlvPlayer url="http://82.24.240.212:8000/live/league.flv" isLive={true} />
+        <ReactFlvPlayer url="https://jacobtye.dev:8443/live/league.flv" isLive={true} />
       </>
     )
   }
