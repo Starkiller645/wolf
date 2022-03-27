@@ -102,7 +102,7 @@ class Live extends React.Component {
   render() {
     return(
       <>
-        <ReactFlvPlayer url="https://jacobtye.dev:8443/live/league.flv" isLive={true} />
+        <ReactFlvPlayer url="https://jacobtye.dev/stream/streamlive/league.flv" isLive={true} />
       </>
     )
   }
