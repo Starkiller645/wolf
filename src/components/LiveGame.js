@@ -39,7 +39,7 @@ class LiveGame extends React.Component {
   }
 
   EnemyChampsList = () => {
-    if(!this.state.ingame) return null
+    if(this.state.ingame) {
     var i = 0;
     const enemy_images = this.state.enemy.champs.map(champ => {
       i++;
@@ -57,12 +57,13 @@ class LiveGame extends React.Component {
         { enemy_images }
       </div>
     )
+    } else {
+	return null
+    }
   }
 
   AllyChampsList = () => {
-    if(!this.state.ingame) {
-        return null
-    }
+    if(this.state.ingame) {
     var i = 0;
     const ally_images = this.state.ally.champs.map(champ => {
       i++;
@@ -89,13 +90,17 @@ class LiveGame extends React.Component {
         { ally_images }
       </div>
     )
+    } else {
+	return null
+    }
   }
 
   updateTime() {
     if(!this.state.ingame) return null
-    const timestamp = Math.round((Date.now() / 1000) - this.state.starttime)
-    var secs = String(timestamp % 60)
-    var mins = String(Math.floor(timestamp / 60))
+    var timestamp = Math.round(Date.now() - this.state.starttime)
+    timestamp = timestamp / 1000
+    var secs = String(Math.round(timestamp % 60))
+    var mins = String(Math.round(Math.floor(timestamp / 60)))
     if(secs < 10) {
       secs = "0" + secs
     }
@@ -118,13 +123,14 @@ class LiveGame extends React.Component {
         })
       } else {
         this.setState({
-            ally: {kills: "-"},
-            enemy: {kills: "-"},
+	    ally: {champs: [], kills: "-"},
+            enemy: {champs: [], kills: "-"},
             gametype: "NO ACTIVE GAME",
             time: "--:--",
             ingame: false
         })
       }
+      console.log(this.state)
     })
   }
 
